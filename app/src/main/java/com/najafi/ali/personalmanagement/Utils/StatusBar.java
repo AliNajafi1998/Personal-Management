@@ -1,4 +1,4 @@
-package com.najafi.ali.personalmanagment.Utils;
+package com.najafi.ali.personalmanagement.Utils;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -20,7 +20,7 @@ public class StatusBar {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                         Window window = myActivityReference.getWindow();
                         window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
-                        window.setStatusBarColor(Color.parseColor("#1EB83C"));
+                        window.setStatusBarColor(Color.parseColor("#1EB83C"));//TODO : CHANGE COLOR!!
                     }
                 }
             }

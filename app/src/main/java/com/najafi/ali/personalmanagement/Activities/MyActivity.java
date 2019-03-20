@@ -1,4 +1,4 @@
-package com.najafi.ali.personalmanagment.Activities;
+package com.najafi.ali.personalmanagement.Activities;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;

@@ -1,9 +1,9 @@
-package com.najafi.ali.personalmanagment.Activities.LoginPage;
+package com.najafi.ali.personalmanagement.Activities.LoginPage;
 
 import android.os.Bundle;
 
-import com.najafi.ali.personalmanagment.Activities.MyActivity;
-import com.najafi.ali.personalmanagment.R;
+import com.najafi.ali.personalmanagement.Activities.MyActivity;
+import com.najafi.ali.personalmanagement.R;
 
 public class LoginActivity extends MyActivity {
 

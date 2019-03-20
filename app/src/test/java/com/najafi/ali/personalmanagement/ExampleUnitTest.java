@@ -1,4 +1,4 @@
-package com.najafi.ali.personalmanagment;
+package com.najafi.ali.personalmanagement;
 
 import org.junit.Test;
 

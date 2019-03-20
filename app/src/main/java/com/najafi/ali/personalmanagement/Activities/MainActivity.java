@@ -1,8 +1,8 @@
-package com.najafi.ali.personalmanagment.Activities;
+package com.najafi.ali.personalmanagement.Activities;
 
 import android.os.Bundle;
 
-import com.najafi.ali.personalmanagment.R;
+import com.najafi.ali.personalmanagement.R;
 
 public class MainActivity extends MyActivity {
 
