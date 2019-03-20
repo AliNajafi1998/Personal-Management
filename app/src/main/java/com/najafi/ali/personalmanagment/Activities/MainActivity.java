@@ -1,9 +1,10 @@
-package com.najafi.ali.personalmanagment;
+package com.najafi.ali.personalmanagment.Activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.najafi.ali.personalmanagment.R;
+
+public class MainActivity extends MyActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
