@@ -8,9 +8,10 @@
         android:icon="@drawable/logo1"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
+        android:supportsRtl="false"
         android:theme="@style/AppTheme">
-        <activity android:name="com.najafi.ali.personalmanagement.Activities.LoginPage.LoginActivity"
+        <activity
+            android:name="com.najafi.ali.personalmanagement.Activities.LoginPage.LoginActivity"
             android:fitsSystemWindows="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.najafi.ali.personalmanagement.Activities.MainActivity"
+        <activity
+            android:name="com.najafi.ali.personalmanagement.Activities.MainActivity"
             android:fitsSystemWindows="true">
 
         </activity>
