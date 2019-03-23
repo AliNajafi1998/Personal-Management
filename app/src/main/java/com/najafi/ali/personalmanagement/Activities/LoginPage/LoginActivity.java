@@ -24,6 +24,7 @@ public class LoginActivity extends MyActivity {
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.MyStyle);
         super.onCreate(savedInstanceState);
         StatusBar.initStatusBar(this);
         setContentView(R.layout.activity_login);

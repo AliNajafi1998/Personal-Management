@@ -15,7 +15,8 @@
         <activity
             android:name=".Activities.LoginPage.LoginActivity"
             android:fitsSystemWindows="true"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Launcher">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

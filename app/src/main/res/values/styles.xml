@@ -20,9 +20,15 @@
         <item name="android:background">@drawable/btn_bg_enter</item>
 
     </style>
+
     <style name="btn_enter_2">
         <item name="android:textColor">#ffffff</item>
         <item name="android:background">@drawable/btn_bg_sign_up_2</item>
 
     </style>
+
+    <style name="AppTheme.Launcher" parent="MyStyle">
+        <item name="android:windowBackground">@drawable/logo1</item>
+    </style>
+
 </resources>
