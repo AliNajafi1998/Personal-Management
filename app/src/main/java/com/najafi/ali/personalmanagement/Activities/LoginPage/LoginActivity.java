@@ -1,5 +1,6 @@
 package com.najafi.ali.personalmanagement.Activities.LoginPage;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Build;
@@ -92,7 +93,9 @@ public class LoginActivity extends MyActivity {
             }
 
         } else if (v.getId() == R.id.btn_sign_up) {
-            startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
+            Intent i = new Intent(LoginActivity.this, SignUpActivity.class);
+            startActivity(i);
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         }
     }
 
