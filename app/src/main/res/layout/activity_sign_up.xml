@@ -10,9 +10,9 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
         android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:fitsSystemWindows="true">
+        android:focusableInTouchMode="true">
 
 
         <android.support.v7.widget.CardView
@@ -21,11 +21,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
             app:cardBackgroundColor="@color/bg_card_view_color"
             app:cardCornerRadius="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -86,7 +85,8 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:hint="نام کاربری"
-                            android:inputType="textEmailAddress"
+                            android:inputType="text"
+                            android:maxLines="1"
                             android:textAlignment="gravity"
                             android:textColorHint="#438FA5" />
 
@@ -133,7 +133,8 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:hint="آدرس ایمیل"
-                            android:inputType="textPassword"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
                             android:textColorHint="#438FA5" />
 
                     </android.support.design.widget.TextInputLayout>
@@ -175,6 +176,7 @@
                             android:gravity="left"
                             android:hint="رمز عبور"
                             android:inputType="textPassword"
+                            android:maxLines="1"
                             android:textColorHint="#438FA5" />
 
                     </android.support.design.widget.TextInputLayout>
@@ -218,6 +220,7 @@
                             android:gravity="left"
                             android:hint="تکرار رمز عبور"
                             android:inputType="textPassword"
+                            android:maxLines="1"
                             android:textColorHint="#438FA5" />
 
                     </android.support.design.widget.TextInputLayout>
@@ -259,6 +262,8 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:hint="نام و نام خانوادگی"
+                            android:inputType="text"
+                            android:maxLines="1"
                             android:textColorHint="#438FA5" />
 
                     </android.support.design.widget.TextInputLayout>
@@ -297,6 +302,8 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:hint="کد دعوت"
+                            android:inputType="text"
+                            android:maxLines="1"
                             android:textColorHint="#438FA5" />
 
                     </android.support.design.widget.TextInputLayout>

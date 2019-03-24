@@ -1,6 +1,6 @@
 package com.najafi.ali.personalmanagement.Activities.LoginPage;
 
-import android.app.ActivityOptions;
+
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Build;
@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
+import android.support.v7.widget.AppCompatCheckBox;
 import android.view.View;
 
 import com.najafi.ali.personalmanagement.Activities.MyActivity;
@@ -20,6 +21,8 @@ public class LoginActivity extends MyActivity {
     TextInputEditText txtInputEmail;
     TextInputLayout textInputLayoutPassword;
     TextInputLayout textInputLayoutEmail;
+
+    AppCompatCheckBox checkBox;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
@@ -44,6 +47,7 @@ public class LoginActivity extends MyActivity {
         textInputLayoutEmail = findViewById(R.id.emailInput);
         txtInputPassword = findViewById(R.id.pass);
         txtInputEmail = findViewById(R.id.enter);
+        checkBox = findViewById(R.id.checkboxRemember);
     }
 
 //    private void animation() {
@@ -100,4 +104,7 @@ public class LoginActivity extends MyActivity {
         }
     }
 
+    public void checkBoxChanger(View view) {
+        checkBox.setChecked(!checkBox.isChecked());
+    }
 }
