@@ -234,6 +234,7 @@
             android:layout_marginBottom="8dp"
             app:aebAnimDurationMillis="175"
             app:aebBlurBackground="true"
+            android:translationZ="1dp"
             app:aebBlurRadius="10"
             app:aebButtonElevation="4dp"
             app:aebButtonGapDp="25dp"
@@ -252,44 +253,26 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager_home"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/tabLayoutHome" />
 
         <android.support.design.widget.TabLayout
-            android:id="@+id/tabLayout"
+            android:id="@+id/tabLayoutHome"
             android:layout_width="match_parent"
+            android:background="#801E87E4"
+            app:tabTextColor="#ffffff"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
+            fontPath="fonts/iransansmobile.ttf"
             app:layout_constraintHorizontal_bias="0.562"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card">
 
         </android.support.design.widget.TabLayout>
-
-        <!--   <FrameLayout
-               android:id="@+id/frameLayout"
-               android:layout_width="match_parent"
-               android:layout_height="0dp"
-               android:alpha="0.4"
-               app:layout_constraintBottom_toBottomOf="parent"
-               app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintHorizontal_bias="0.0"
-               app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toTopOf="parent"
-               app:layout_constraintVertical_bias="0.0">
-
-
-               <View
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:background="@drawable/bg_login_gradient_1" />
-           </FrameLayout>
-           -->
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
