@@ -2,7 +2,6 @@ package com.najafi.ali.personalmanagement.Activities.Home;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -49,6 +48,7 @@ public class Home extends MyActivity {
         floatHelpBtn();
 
     }
+
     private void changeTabsFont() {
         ViewGroup vg = (ViewGroup) tabLayout.getChildAt(0);
         int tabsCount = vg.getChildCount();
@@ -58,7 +58,7 @@ public class Home extends MyActivity {
             for (int i = 0; i < tabChildsCount; i++) {
                 View tabViewChild = vgTab.getChildAt(i);
                 if (tabViewChild instanceof TextView) {
-                    ((TextView) tabViewChild).setTypeface(TypeFace.createTypeFaceIransansmobile(this));
+                    ((TextView) tabViewChild).setTypeface(TypeFace.createTypeFaceIransansmobile(getApplicationContext()));
                 }
             }
         }
@@ -76,7 +76,7 @@ public class Home extends MyActivity {
     }
 
     private void floatHelpBtn() {
-        AllAngleExpandableButton button =  findViewById(R.id.button_expandable);
+        AllAngleExpandableButton button = findViewById(R.id.button_expandable);
         final List<ButtonData> buttonDatas = new ArrayList<>();
         int[] drawable = {
                 R.drawable.add,

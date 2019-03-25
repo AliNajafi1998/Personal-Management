@@ -6,6 +6,6 @@ import android.graphics.Typeface;
 public class TypeFace {
 
     public static Typeface createTypeFaceIransansmobile(Context context){
-        return Typeface.createFromAsset(context.getResources().getAssets(), "iransansmobile.ttf");
+        return Typeface.createFromAsset(context.getResources().getAssets(), "fonts/iransansmobile.ttf");
     }
 }

@@ -263,7 +263,7 @@
         <android.support.design.widget.TabLayout
             android:id="@+id/tabLayoutHome"
             android:layout_width="match_parent"
-            android:background="#801E87E4"
+            android:background="@color/colorAccent"
             app:tabTextColor="#ffffff"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
