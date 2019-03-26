@@ -11,6 +11,7 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.widget.AppCompatCheckBox;
 import android.view.View;
 
+import com.najafi.ali.personalmanagement.Activities.Home.Home;
 import com.najafi.ali.personalmanagement.Activities.MyActivity;
 import com.najafi.ali.personalmanagement.R;
 import com.najafi.ali.personalmanagement.Utils.StatusBar;
@@ -96,6 +97,11 @@ public class LoginActivity extends MyActivity {
             } else {
                 textInputLayoutPassword.setErrorEnabled(false);
             }
+
+
+            Intent i = new Intent(LoginActivity.this, Home.class);
+            startActivity(i);
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
         } else if (v.getId() == R.id.btn_sign_up) {
             Intent i = new Intent(LoginActivity.this, SignUpActivity.class);

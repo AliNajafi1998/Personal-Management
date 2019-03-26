@@ -33,12 +33,11 @@
 
                 <ImageView
                     android:layout_width="121dp"
-                    android:layout_height="81dp"
+                    android:layout_height="113dp"
                     android:layout_gravity="top|right"
                     android:layout_marginTop="-20dp"
                     android:layout_marginEnd="-25dp"
-                    android:tint="#CCFFFFFF"
-                    app:srcCompat="@drawable/clock" />
+                    app:srcCompat="@drawable/clock2" />
 
             </FrameLayout>
 
@@ -154,7 +153,7 @@
                 android:id="@+id/imageView2"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:tint="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toBottomOf="@+id/imageView"
@@ -213,7 +212,7 @@
                 android:id="@+id/imageView3"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:tint="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toBottomOf="@+id/imageView2"
@@ -272,7 +271,7 @@
                 android:id="@+id/imageView4"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
                 android:tint="#FFFFFF"
                 app:layout_constraintBottom_toBottomOf="parent"

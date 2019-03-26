@@ -25,11 +25,28 @@
         <item name="android:textColor">#ffffff</item>
         <item name="android:background">@drawable/btn_bg_sign_up_2</item>
 
-    </style> <style name="btn_enter_3">
+    </style>
+
+    <style name="btn_enter_3">
         <item name="android:textColor">#ffffff</item>
         <item name="android:background">@drawable/btn_save_bg</item>
-
     </style>
+
+    <style name="btn_enter_4">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:background">@drawable/btn_bg_1</item>
+    </style>
+
+    <style name="btn_enter_5">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:background">@drawable/btn_bg_2</item>
+    </style>
+
+    <style name="btn_enter_6">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:background">@drawable/btn_bg_3</item>
+    </style>
+
     <style name="AppTheme.Launcher" parent="MyStyle">
         <item name="android:windowBackground">@drawable/logo1</item>
     </style>

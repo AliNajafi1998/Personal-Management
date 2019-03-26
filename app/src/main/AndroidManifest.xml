@@ -12,30 +12,29 @@
         android:supportsRtl="false"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Activities.Home.Home">
+        <activity android:name=".Activities.Activity.Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Activities.Home.Home" />
         <activity
             android:name=".Activities.LoginPage.LoginActivity"
             android:fitsSystemWindows="true"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Launcher"/>
+            android:theme="@style/AppTheme.Launcher">
 
+        </activity>
         <activity
             android:name=".Activities.LoginPage.SignUpActivity"
             android:fitsSystemWindows="true"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.MainActivity"
             android:fitsSystemWindows="true"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

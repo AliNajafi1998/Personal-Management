@@ -12,6 +12,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:background="#F9B09F"
         app:cardCornerRadius="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -33,13 +34,12 @@
 
                 <ImageView
                     android:layout_width="121dp"
-                    android:padding="10dp"
-                    android:layout_height="81dp"
+                    android:layout_height="113dp"
                     android:layout_gravity="top|right"
-                    android:layout_marginTop="-16dp"
+                    android:layout_marginTop="-20dp"
                     android:layout_marginEnd="-25dp"
-                    android:tint="#E6FFFFFF"
-                    app:srcCompat="@drawable/info" />
+                    android:padding="10dp"
+                    app:srcCompat="@drawable/info2" />
 
             </FrameLayout>
 
@@ -53,7 +53,7 @@
                 android:gravity="center"
                 android:text=" دقیقه"
                 android:textAlignment="center"
-                android:textColor="#ffffff"
+                android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView7"
                 app:layout_constraintStart_toStartOf="parent"
@@ -155,7 +155,7 @@
                 android:id="@+id/imageView2"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:tint="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toBottomOf="@+id/imageView"
@@ -214,7 +214,7 @@
                 android:id="@+id/imageView3"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:tint="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toBottomOf="@+id/imageView2"
@@ -273,7 +273,7 @@
                 android:id="@+id/imageView4"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
                 android:tint="#FFFFFF"
                 app:layout_constraintBottom_toBottomOf="parent"

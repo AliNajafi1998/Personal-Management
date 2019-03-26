@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.fangxu.allangleexpandablebutton.AllAngleExpandableButton;
 import com.fangxu.allangleexpandablebutton.ButtonData;
 import com.fangxu.allangleexpandablebutton.ButtonEventListener;
+import com.najafi.ali.personalmanagement.Activities.Activity.Activity;
 import com.najafi.ali.personalmanagement.Activities.LoginPage.LoginActivity;
 import com.najafi.ali.personalmanagement.Activities.MyActivity;
 import com.najafi.ali.personalmanagement.R;
@@ -112,6 +113,11 @@ public class Home extends MyActivity {
                 } else if (index == 2) {
 
                 } else if (index == 3) {
+
+                    Intent i = new Intent(Home.this, Activity.class);
+                    startActivity(i);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
 
                 } else if (index == 4) {
 

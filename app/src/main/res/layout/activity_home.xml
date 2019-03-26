@@ -232,9 +232,9 @@
             android:layout_centerHorizontal="true"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            android:translationZ="1dp"
             app:aebAnimDurationMillis="175"
             app:aebBlurBackground="true"
-            android:translationZ="1dp"
             app:aebBlurRadius="10"
             app:aebButtonElevation="4dp"
             app:aebButtonGapDp="25dp"
@@ -262,16 +262,17 @@
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tabLayoutHome"
+            fontPath="fonts/iransansmobile.ttf"
             android:layout_width="match_parent"
-            android:background="@color/colorAccent"
-            app:tabTextColor="#ffffff"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:background="@color/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
-            fontPath="fonts/iransansmobile.ttf"
             app:layout_constraintHorizontal_bias="0.562"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card">
+            app:layout_constraintTop_toBottomOf="@+id/card"
+            app:tabIndicatorColor="#0089FF"
+            app:tabTextColor="#ffffff">
 
         </android.support.design.widget.TabLayout>
     </android.support.constraint.ConstraintLayout>
