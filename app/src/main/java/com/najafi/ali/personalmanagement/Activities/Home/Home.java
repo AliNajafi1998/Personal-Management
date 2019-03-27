@@ -83,14 +83,12 @@ public class Home extends MyActivity {
         int[] drawable = {
                 R.drawable.add,
                 R.drawable.sign_out,
-                R.drawable.home,
                 R.drawable.activity,
                 R.drawable.work,
                 R.drawable.money};
         int[] colors = {
                 Color.parseColor("#f1c40f"),
                 Color.parseColor("#e74c3c"),
-                Color.parseColor("#2ecc71"),
                 Color.parseColor("#3498db"),
                 Color.parseColor("#FD007B"),
                 Color.parseColor("#9b59b6")
@@ -113,16 +111,13 @@ public class Home extends MyActivity {
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 } else if (index == 2) {
 
-                } else if (index == 3) {
-
                     Intent i = new Intent(Home.this, Activity.class);
                     startActivity(i);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
+                } else if (index == 3) {
 
                 } else if (index == 4) {
-
-                } else if (index == 5) {
 
                 }
 

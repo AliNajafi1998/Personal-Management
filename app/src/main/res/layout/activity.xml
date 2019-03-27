@@ -120,8 +120,33 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/listOfJobs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-
+    <com.fangxu.allangleexpandablebutton.AllAngleExpandableButton
+        android:id="@+id/button_expandable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="bottom|right"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:translationZ="1dp"
+        app:aebAnimDurationMillis="175"
+        app:aebBlurBackground="true"
+        app:aebBlurRadius="10"
+        app:aebButtonElevation="4dp"
+        app:aebButtonGapDp="25dp"
+        app:aebEndAngleDegree="90"
+        app:aebIsSelectionMode="false"
+        app:aebMainButtonRotateAnimDurationMillis="250"
+        app:aebMainButtonRotateDegree="-135"
+        app:aebMainButtonSizeDp="48dp"
+        app:aebMainButtonTextSizeSp="20dp"
+        app:aebMaskBackgroundColor="@color/transparent"
+        app:aebRippleEffect="true"
+        app:aebStartAngleDegree="90"
+        app:aebSubButtonSizeDp="48dp"
+        app:aebSubButtonTextSizeSp="18dp" />
 </android.support.design.widget.CoordinatorLayout>
