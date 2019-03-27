@@ -4,20 +4,22 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.najafi.ali.personalmanagement.Activities.Activity.Activity;
 import com.najafi.ali.personalmanagement.R;
 import com.najafi.ali.personalmanagement.Utils.EnglishToPersian;
+import com.najafi.ali.personalmanagement.fragments.home.delete.DeleteDialogFragment;
 
 import java.util.List;
 
-public class JobsAdapter extends RecyclerView.Adapter<JobsAdapter.VH> {
+public class JobsAdapter extends RecyclerView.Adapter<JobsAdapter.VH>   {
 
+    private static int position;
     private List<Jobs> jobs;
     private Context context;
     private Activity activity;
@@ -46,6 +48,8 @@ public class JobsAdapter extends RecyclerView.Adapter<JobsAdapter.VH> {
         final Jobs job = jobs.get(position);
 
         vh.bind(job);
+
+        listeners(vh.btnRemove, position);
     }
 
 
@@ -59,6 +63,8 @@ public class JobsAdapter extends RecyclerView.Adapter<JobsAdapter.VH> {
 
     }
 
+
+
     public class VH extends RecyclerView.ViewHolder {
 
         AppCompatImageView imgJob;
@@ -66,6 +72,7 @@ public class JobsAdapter extends RecyclerView.Adapter<JobsAdapter.VH> {
         TextView txtPrice;
         TextView txtName;
         TextView txtId;
+        Button btnRemove;
 
         public VH(@NonNull View itemView) {
             super(itemView);
@@ -74,6 +81,7 @@ public class JobsAdapter extends RecyclerView.Adapter<JobsAdapter.VH> {
             txtPrice = itemView.findViewById(R.id.txt_price_job);
             txtName = itemView.findViewById(R.id.txt_name_job);
             txtId = itemView.findViewById(R.id.txt_id_job);
+            btnRemove = itemView.findViewById(R.id.btn_remove_item);
         }
 
         private void bind(Jobs job) {
@@ -85,4 +93,24 @@ public class JobsAdapter extends RecyclerView.Adapter<JobsAdapter.VH> {
 
         }
     }
+
+    private void listeners(Button button, final int position) {
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                JobsAdapter.position = position;
+                DeleteDialogFragment fragment = new DeleteDialogFragment();
+                fragment.show(activity.getSupportFragmentManager(), "delete");
+
+
+            }
+        });
+    }
+
+    public void removeAt() {
+        jobs.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position, jobs.size());
+    }
+
 }

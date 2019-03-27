@@ -18,11 +18,12 @@ import com.najafi.ali.personalmanagement.Activities.MyActivity;
 import com.najafi.ali.personalmanagement.Model.Jobs;
 import com.najafi.ali.personalmanagement.Model.JobsAdapter;
 import com.najafi.ali.personalmanagement.R;
+import com.najafi.ali.personalmanagement.fragments.home.delete.DeleteDialogFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Activity extends MyActivity {
+public class Activity extends MyActivity implements DeleteDialogFragment.Idelete {
 
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
@@ -44,7 +45,7 @@ public class Activity extends MyActivity {
     private void init() {
         recyclerView = findViewById(R.id.listOfJobs);
         jobs = new ArrayList<>();
-        adapter = new JobsAdapter(jobs, this,this);
+        adapter = new JobsAdapter(jobs, this, this);
 
     }
 
@@ -137,5 +138,10 @@ public class Activity extends MyActivity {
 
 
         });
+    }
+
+    @Override
+    public void deleted() {
+        adapter.removeAt();
     }
 }
