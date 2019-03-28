@@ -12,9 +12,9 @@
         android:supportsRtl="false"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Activities.Activity.Activity">
-
-        </activity>
+        <activity android:name=".Activities.Work.WorkActivity"></activity>
+        <activity android:name=".Activities.PayActivity.PayActivity" />
+        <activity android:name=".Activities.Activity.Activity" />
         <activity android:name=".Activities.Home.Home" />
         <activity
             android:name=".Activities.LoginPage.LoginActivity"

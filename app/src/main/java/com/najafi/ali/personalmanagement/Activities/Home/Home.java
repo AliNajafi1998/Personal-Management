@@ -20,6 +20,8 @@ import com.fangxu.allangleexpandablebutton.ButtonEventListener;
 import com.najafi.ali.personalmanagement.Activities.Activity.Activity;
 import com.najafi.ali.personalmanagement.Activities.LoginPage.LoginActivity;
 import com.najafi.ali.personalmanagement.Activities.MyActivity;
+import com.najafi.ali.personalmanagement.Activities.PayActivity.PayActivity;
+import com.najafi.ali.personalmanagement.Activities.Work.WorkActivity;
 import com.najafi.ali.personalmanagement.R;
 import com.najafi.ali.personalmanagement.Utils.TypeFace;
 import com.najafi.ali.personalmanagement.fragments.home.HomeFragment1;
@@ -116,8 +118,14 @@ public class Home extends MyActivity {
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
                 } else if (index == 3) {
+                    Intent i = new Intent(Home.this, WorkActivity.class);
+                    startActivity(i);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
                 } else if (index == 4) {
+                    Intent i = new Intent(Home.this, PayActivity.class);
+                    startActivity(i);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
                 }
 

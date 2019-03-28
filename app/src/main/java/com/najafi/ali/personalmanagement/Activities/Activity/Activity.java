@@ -18,6 +18,8 @@ import com.fangxu.allangleexpandablebutton.ButtonEventListener;
 import com.najafi.ali.personalmanagement.Activities.Home.Home;
 import com.najafi.ali.personalmanagement.Activities.LoginPage.LoginActivity;
 import com.najafi.ali.personalmanagement.Activities.MyActivity;
+import com.najafi.ali.personalmanagement.Activities.PayActivity.PayActivity;
+import com.najafi.ali.personalmanagement.Activities.Work.WorkActivity;
 import com.najafi.ali.personalmanagement.Model.Jobs;
 import com.najafi.ali.personalmanagement.Model.JobsAdapter;
 import com.najafi.ali.personalmanagement.R;
@@ -127,9 +129,13 @@ public class Activity extends MyActivity implements DeleteDialogFragment.Idelete
                     startActivity(i);
                     overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 } else if (index == 3) {
-
+                    Intent i = new Intent(Activity.this, WorkActivity.class);
+                    startActivity(i);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 } else if (index == 4) {
-
+                    Intent i = new Intent(Activity.this, PayActivity.class);
+                    startActivity(i);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 }
             }
 
@@ -167,6 +173,7 @@ public class Activity extends MyActivity implements DeleteDialogFragment.Idelete
         final Dialog dialogConfirm = new Dialog(this);
         dialogConfirm.setContentView(R.layout.custom_dialog_2);
         dialogConfirm.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.setContentView(R.layout.custom_dialog_1);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
@@ -208,6 +215,7 @@ public class Activity extends MyActivity implements DeleteDialogFragment.Idelete
         final Dialog dialogConfirm = new Dialog(this);
         dialogConfirm.setContentView(R.layout.custom_dialog_2);
         dialogConfirm.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.setContentView(R.layout.custom_dialog_3);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
@@ -243,4 +251,6 @@ public class Activity extends MyActivity implements DeleteDialogFragment.Idelete
         });
 
     }
+
+
 }
