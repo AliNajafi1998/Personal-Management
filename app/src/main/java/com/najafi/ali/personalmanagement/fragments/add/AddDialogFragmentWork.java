@@ -1,4 +1,4 @@
-package com.najafi.ali.personalmanagement.fragments.delete;
+package com.najafi.ali.personalmanagement.fragments.add;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -6,56 +6,75 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.DialogFragment;
+import android.support.v7.widget.AppCompatSpinner;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.najafi.ali.personalmanagement.R;
+import com.najafi.ali.personalmanagement.Utils.SpinnerAdapter;
 
-public class DeleteDialogFragment extends DialogFragment {
+import java.util.ArrayList;
+import java.util.Arrays;
 
-    private Button btn_delete;
-    private Button btn_dismis;
-    private DeleteDialogFragmentWork.Idelete idelete;
+public class AddDialogFragmentWork extends DialogFragment {
+
+    private AddItemInterface iadd;
+    private Button btnAdd;
+    private Button btnNotAdd;
+
+    private TextInputEditText txtName;
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.delete_dialog_fragment, container, false);
+        View v = inflater.inflate(R.layout.add_dialog_fragment_work, container, false);
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        btn_delete = view.findViewById(R.id.btn_remove_item_dialog);
-        btn_dismis = view.findViewById(R.id.btn_not_remove_item_dialog);
-        btn_delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                idelete.deleted();
-                dismiss();
-            }
-        });
-        btn_dismis.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dismiss();
-            }
-        });
-        return view;
 
+        btnAdd = v.findViewById(R.id.btn_add_item_dialog);
+        btnNotAdd = v.findViewById(R.id.btn_not_add_item_dialog);
+        txtName = v.findViewById(R.id.txt_name);
+
+
+
+        btnNotAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismiss();
+            }
+        });
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iadd.add(txtName.getText().toString());
+                dismiss();
+            }
+        });
+
+        return v;
     }
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
-            this.idelete = (DeleteDialogFragmentWork.Idelete) activity;
+            this.iadd = (AddItemInterface) activity;
         } catch (final ClassCastException e) {
             throw new ClassCastException(activity.toString() + " must implement OnCompleteListener");
         }
     }
 
-    public interface Idelete {
-        void deleted();
+
+
+   public interface AddItemInterface {
+        void add(String name);
     }
+
+
 }

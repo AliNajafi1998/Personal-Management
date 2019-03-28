@@ -16,6 +16,7 @@ import com.najafi.ali.personalmanagement.Activities.Activity.Activity;
 import com.najafi.ali.personalmanagement.R;
 import com.najafi.ali.personalmanagement.Utils.EnglishToPersian;
 import com.najafi.ali.personalmanagement.fragments.delete.DeleteDialogFragment;
+import com.najafi.ali.personalmanagement.fragments.edit.EditDialogFragment;
 
 import java.util.List;
 
@@ -61,10 +62,12 @@ public class JobsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         final Jobs job = jobs.get(position);
         if (vh.getItemViewType() == 0) {
             ((VH0) vh).bind0(job);
-            listeners(((VH0) vh).btnRemove, position);
+            listenerDelete(((VH0) vh).btnRemove, position);
+            listenerEdit(((VH0) vh).btnEdit, position);
         } else {
             ((VH1) vh).bind1(job);
-            listeners(((VH1) vh).btnRemove, position);
+            listenerDelete(((VH1) vh).btnRemove, position);
+            listenerEdit(((VH1) vh).btnEdit, position);
         }
     }
 
@@ -83,6 +86,8 @@ public class JobsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         TextView txtName;
         TextView txtId;
         Button btnRemove;
+        Button btnEdit;
+
 
         public VH0(@NonNull View itemView) {
             super(itemView);
@@ -92,6 +97,7 @@ public class JobsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             txtName = itemView.findViewById(R.id.txt_name_job);
             txtId = itemView.findViewById(R.id.txt_id_job);
             btnRemove = itemView.findViewById(R.id.btn_remove_item);
+            btnEdit = itemView.findViewById(R.id.btn_edit_job);
         }
 
         private void bind0(Jobs job) {
@@ -100,9 +106,14 @@ public class JobsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             imgJob.setImageResource(job.getImage());
             txtId.setText(EnglishToPersian.englishToPersian(String.valueOf(job.getId())));
             txtName.setText(job.getName());
-
+            btnEdit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    EditDialogFragment fragment = new EditDialogFragment();
+                    fragment.show(activity.getSupportFragmentManager(), "edit");
+                }
+            });
         }
-
     }
 
     public class VH1 extends RecyclerView.ViewHolder {
@@ -115,6 +126,7 @@ public class JobsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         TextView txtNote;
         Button btnRemove;
         ImageView imgNote;
+        Button btnEdit;
 
         public VH1(@NonNull View itemView) {
             super(itemView);
@@ -134,6 +146,8 @@ public class JobsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             imgJob.setImageResource(job.getImage());
             txtId.setText(EnglishToPersian.englishToPersian(String.valueOf(job.getId())));
             txtName.setText(job.getName());
+            btnEdit = itemView.findViewById(R.id.btn_edit_job);
+
 
             txtNote.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -153,15 +167,26 @@ public class JobsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     }
 
-    private void listeners(Button button, final int position) {
+    private void listenerEdit(Button button, final int position) {
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                JobsAdapter.position = position;
+                EditDialogFragment fragment = new EditDialogFragment();
+                fragment.show(activity.getSupportFragmentManager(), "edit");
+            }
+        });
+
+
+    }
+
+    private void listenerDelete(Button button, final int position) {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 JobsAdapter.position = position;
                 DeleteDialogFragment fragment = new DeleteDialogFragment();
                 fragment.show(activity.getSupportFragmentManager(), "delete");
-
-
             }
         });
     }
@@ -172,10 +197,23 @@ public class JobsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         notifyItemRangeChanged(position, jobs.size());
     }
 
+    public void editItem(String txtDuration, String txtPaid, String txtType, String note) {
+        Jobs job = jobs.get(position);
+        job.setDuration(Double.parseDouble(txtDuration));
+        job.setPaid(Double.parseDouble(txtPaid));
+        job.setName(txtType);
+        if (!note.isEmpty()) {
+            job.setHasNote(true);
+        }else{
+            job.setHasNote(false);
+        }
+        jobs.set(position, job);
+        notifyItemChanged(position, job);
+    }
+
     public void addItem(String duration, String paid, String name, String note, int c) {
         Jobs job = new Jobs(1, c, name, Double.parseDouble(duration), Double.parseDouble(paid), 12313, !note.isEmpty());
         jobs.add(job);
         notifyItemInserted(jobs.size() - 1);
     }
-
 }

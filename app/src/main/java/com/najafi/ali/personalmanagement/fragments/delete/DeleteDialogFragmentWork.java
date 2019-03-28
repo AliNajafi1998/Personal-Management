@@ -14,20 +14,20 @@ import android.widget.Button;
 
 import com.najafi.ali.personalmanagement.R;
 
-public class DeleteDialogFragment extends DialogFragment {
+public class DeleteDialogFragmentWork extends DialogFragment {
 
     private Button btn_delete;
     private Button btn_dismis;
-    private DeleteDialogFragmentWork.Idelete idelete;
+    Idelete idelete;
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.delete_dialog_fragment, container, false);
+        View view = inflater.inflate(R.layout.delete_dialog_fragment_work, container, false);
         getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        btn_delete = view.findViewById(R.id.btn_remove_item_dialog);
-        btn_dismis = view.findViewById(R.id.btn_not_remove_item_dialog);
+        btn_delete = view.findViewById(R.id.btn_remove_item_dialog_work);
+        btn_dismis = view.findViewById(R.id.btn_not_remove_item_dialog_work);
         btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +49,7 @@ public class DeleteDialogFragment extends DialogFragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
-            this.idelete = (DeleteDialogFragmentWork.Idelete) activity;
+            this.idelete = (Idelete) activity;
         } catch (final ClassCastException e) {
             throw new ClassCastException(activity.toString() + " must implement OnCompleteListener");
         }

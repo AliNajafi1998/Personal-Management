@@ -24,13 +24,16 @@ import com.najafi.ali.personalmanagement.ModelForJobs.Jobs;
 import com.najafi.ali.personalmanagement.ModelForJobs.JobsAdapter;
 import com.najafi.ali.personalmanagement.R;
 import com.najafi.ali.personalmanagement.fragments.add.AddDialogFragment;
+import com.najafi.ali.personalmanagement.fragments.add.AddDialogFragmentWork;
 import com.najafi.ali.personalmanagement.fragments.delete.DeleteDialogFragment;
+import com.najafi.ali.personalmanagement.fragments.edit.EditDialogFragment;
 
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Activity extends MyActivity implements DeleteDialogFragment.Idelete, AddDialogFragment.AddItemInterface {
+public class Activity extends MyActivity implements DeleteDialogFragment.Idelete,
+        AddDialogFragment.AddItemInterface, EditDialogFragment.SaveChangeInterFace {
 
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
@@ -172,8 +175,8 @@ public class Activity extends MyActivity implements DeleteDialogFragment.Idelete
         final Dialog dialog = new Dialog(this);
         final Dialog dialogConfirm = new Dialog(this);
         dialogConfirm.setContentView(R.layout.custom_dialog_2);
-        dialogConfirm.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialogConfirm.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.setContentView(R.layout.custom_dialog_1);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
@@ -214,8 +217,8 @@ public class Activity extends MyActivity implements DeleteDialogFragment.Idelete
         final Dialog dialog = new Dialog(this);
         final Dialog dialogConfirm = new Dialog(this);
         dialogConfirm.setContentView(R.layout.custom_dialog_2);
-        dialogConfirm.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialogConfirm.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.setContentView(R.layout.custom_dialog_3);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.show();
@@ -250,6 +253,12 @@ public class Activity extends MyActivity implements DeleteDialogFragment.Idelete
             }
         });
 
+    }
+
+
+    @Override
+    public void changeIt(String txtDuration, String txtPaid, String txtType, String note) {
+        adapter.editItem(txtDuration, txtPaid, txtType, note);
     }
 
 

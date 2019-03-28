@@ -31,8 +31,9 @@
 
 
                 <Button
-                    android:id="@+id/btn_add_new_pay"
+                    android:id="@+id/btn_add_new_work"
                     style="@style/btn_enter_5"
+                    android:onClick="addWork"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
@@ -102,7 +103,7 @@
 
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/listOfPays"
+        android:id="@+id/listOfWork"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
