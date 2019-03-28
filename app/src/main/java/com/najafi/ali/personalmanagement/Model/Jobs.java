@@ -9,15 +9,38 @@ public class Jobs {
     private double paid;
     private double price;
     private boolean expanded;
+    private boolean hasNote;
+    private String note;
 
-    public Jobs(int id, int image, String name, double duration, double paid, double price) {
+    public Jobs(int id, int image, String name, double duration, double paid, double price, boolean hasNote) {
         this.id = id;
         this.image = image;
         this.name = name;
         this.duration = duration;
         this.paid = paid;
         this.price = price;
+        this.hasNote = hasNote;
         this.expanded = true;
+    }
+
+    public boolean isHasNote() {
+        return hasNote;
+    }
+
+    public void setHasNote(boolean hasNote) {
+        this.hasNote = hasNote;
+    }
+
+    public String getNote() {
+        if (hasNote)
+            return note;
+        else
+            return "";
+    }
+
+    public void setNote(String note) {
+        this.hasNote = true;
+        this.note = note;
     }
 
     public boolean isExpanded() {

@@ -1,4 +1,4 @@
-package com.najafi.ali.personalmanagement.fragments.home.delete;
+package com.najafi.ali.personalmanagement.fragments.delete;
 
 import android.app.Activity;
 import android.graphics.Color;
