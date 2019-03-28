@@ -34,6 +34,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
+                    android:onClick="payOffMoney"
                     android:layout_weight="0.8"
                     android:text="تسویه تومان" />
 
@@ -49,11 +50,13 @@
                     android:text="افزودن فعالیت جدید" />
 
                 <Button
+                    android:id="@+id/btn_payoff"
                     style="@style/btn_enter_6"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="2dp"
                     android:layout_weight="0.8"
+                    android:onClick="payOffTime"
                     android:text="تسویه دقیقه" />
 
             </LinearLayout>

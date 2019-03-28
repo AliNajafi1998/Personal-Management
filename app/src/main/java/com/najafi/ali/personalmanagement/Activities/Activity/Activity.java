@@ -1,14 +1,16 @@
 package com.najafi.ali.personalmanagement.Activities.Activity;
 
+import android.app.Dialog;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.fangxu.allangleexpandablebutton.AllAngleExpandableButton;
 import com.fangxu.allangleexpandablebutton.ButtonData;
@@ -32,6 +34,7 @@ public class Activity extends MyActivity implements DeleteDialogFragment.Idelete
     RecyclerView.LayoutManager layoutManager;
     JobsAdapter adapter;
     List<Jobs> jobs;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -156,6 +159,88 @@ public class Activity extends MyActivity implements DeleteDialogFragment.Idelete
 
     @Override
     public void add(String duration, String paid, String name, String note) {
-        adapter.addItem(duration,paid,name,name,R.drawable.c);
+        adapter.addItem(duration, paid, name, name, R.drawable.c);
+    }
+
+    public void payOffTime(View view) {
+        final Dialog dialog = new Dialog(this);
+        final Dialog dialogConfirm = new Dialog(this);
+        dialogConfirm.setContentView(R.layout.custom_dialog_2);
+        dialogConfirm.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.setContentView(R.layout.custom_dialog_1);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.show();
+
+        dialogConfirm.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.findViewById(R.id.btn_pay).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+
+                dialogConfirm.show();
+                dialogConfirm.findViewById(R.id.btn_pay_2).setOnClickListener(new View.OnClickListener() {////////////
+                    @Override
+                    public void onClick(View v) {
+                        dialogConfirm.dismiss();
+                        //TODO
+                    }
+                });
+
+                dialogConfirm.findViewById(R.id.btn_dismiss_2).setOnClickListener(new View.OnClickListener() {////////////
+                    @Override
+                    public void onClick(View v) {
+                        dialogConfirm.dismiss();
+                    }
+                });
+            }
+        });
+        dialog.findViewById(R.id.btn_dismiss).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+    }
+
+    public void payOffMoney(View view) {
+        final Dialog dialog = new Dialog(this);
+        final Dialog dialogConfirm = new Dialog(this);
+        dialogConfirm.setContentView(R.layout.custom_dialog_2);
+        dialogConfirm.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.setContentView(R.layout.custom_dialog_3);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.show();
+
+        dialogConfirm.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.findViewById(R.id.btn_pay_3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+
+                dialogConfirm.show();
+                dialogConfirm.findViewById(R.id.btn_pay_2).setOnClickListener(new View.OnClickListener() {////////////
+                    @Override
+                    public void onClick(View v) {
+                        dialogConfirm.dismiss();
+                        //TODO
+                    }
+                });
+
+                dialogConfirm.findViewById(R.id.btn_dismiss_2).setOnClickListener(new View.OnClickListener() {////////////
+                    @Override
+                    public void onClick(View v) {
+                        dialogConfirm.dismiss();
+                    }
+                });
+            }
+        });
+        dialog.findViewById(R.id.btn_dismiss_3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
     }
 }
