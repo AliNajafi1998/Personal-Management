@@ -1,4 +1,4 @@
-package com.najafi.ali.personalmanagement.Model;
+package com.najafi.ali.personalmanagement.ModelForJobs;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -66,8 +66,6 @@ public class JobsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             ((VH1) vh).bind1(job);
             listeners(((VH1) vh).btnRemove, position);
         }
-
-
     }
 
 
@@ -177,8 +175,7 @@ public class JobsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public void addItem(String duration, String paid, String name, String note, int c) {
         Jobs job = new Jobs(1, c, name, Double.parseDouble(duration), Double.parseDouble(paid), 12313, !note.isEmpty());
         jobs.add(job);
-        notifyItemRemoved(position);
-        notifyItemRangeChanged(position, jobs.size());
+        notifyItemInserted(jobs.size() - 1);
     }
 
 }

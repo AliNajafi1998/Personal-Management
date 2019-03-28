@@ -94,7 +94,7 @@
                 android:orientation="horizontal">
 
                 <com.najafi.ali.personalmanagement.Utils.AutoScrollingTextView
-                    android:id="@+id/txt_price_job"
+                    android:id="@+id/txt_pay_cost"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
@@ -102,7 +102,7 @@
                     android:marqueeRepeatLimit="marquee_forever"
                     android:paddingStart="4dp"
                     android:scrollHorizontally="true"
-                    android:text="۵۰۰ هزار تومان"
+                    android:text="۵۰۰"
                     android:textSize="20dp" />
 
                 <TextView
@@ -112,7 +112,7 @@
                     android:layout_marginEnd="4dp"
                     android:gravity="right"
                     android:paddingEnd="8dp"
-                    android:text="مبلغ"
+                    android:text="مبلغ(هزارتومان)"
                     android:textSize="20dp" />
 
 
@@ -132,8 +132,7 @@
                 android:orientation="horizontal">
 
                 <com.najafi.ali.personalmanagement.Utils.AutoScrollingTextView
-
-                    android:id="@+id/txt_duration_job"
+                    android:id="@+id/txt_time_pay"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
@@ -141,7 +140,7 @@
                     android:marqueeRepeatLimit="marquee_forever"
                     android:paddingStart="4dp"
                     android:scrollHorizontally="true"
-                    android:text="۱۰۰۰ دقیقه"
+                    android:text="۱۰۰۰"
                     android:textSize="20dp" />
 
                 <TextView
@@ -151,7 +150,7 @@
                     android:layout_marginEnd="4dp"
                     android:gravity="right"
                     android:paddingEnd="8dp"
-                    android:text="مدت زمان"
+                    android:text="مدت زمان(دقیقه)"
                     android:textSize="20dp" />
 
 
@@ -171,7 +170,7 @@
                 android:orientation="horizontal">
 
                 <com.najafi.ali.personalmanagement.Utils.AutoScrollingTextView
-
+                    android:id="@+id/txt_date_pay"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
@@ -189,7 +188,7 @@
                     android:layout_marginEnd="4dp"
                     android:gravity="right"
                     android:paddingEnd="8dp"
-                    android:text="مدت تاریخ"
+                    android:text="تاریخ"
                     android:textSize="20dp" />
 
 
@@ -204,7 +203,6 @@
             android:weightSum="2">
 
             <Button
-                android:id="@+id/btn_remove_item"
                 style="@style/btn_enter_4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

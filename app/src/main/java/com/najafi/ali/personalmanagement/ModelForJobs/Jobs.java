@@ -1,4 +1,4 @@
-package com.najafi.ali.personalmanagement.Model;
+package com.najafi.ali.personalmanagement.ModelForJobs;
 
 public class Jobs {
 
