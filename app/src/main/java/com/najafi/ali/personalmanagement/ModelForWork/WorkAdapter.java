@@ -1,6 +1,7 @@
 package com.najafi.ali.personalmanagement.ModelForWork;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -74,11 +75,14 @@ public class WorkAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             img_work.setImageResource(work.getImg());
             txtName.setText(work.getName());
             btnActiveState.setText(!work.isActive() ? "فعال کزدن" : "غیرفعال کردن");
+            btnActiveState.setTextColor(Color.parseColor("#FFFFFF"));
+
             btnActiveState.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     work.setActive(!work.isActive());
                     btnActiveState.setText(!work.isActive() ? "فعال کردن" : "غیرفعال کردن");
+                    btnActiveState.setBackgroundResource(work.isActive() ? R.drawable.btn_bg_4 : R.drawable.btn_bg_5);
                 }
             });
         }
@@ -121,8 +125,8 @@ public class WorkAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         notifyItemChanged(position, work);
     }
 
-    public void addItem(String name){
-        Work work = new Work(name,R.drawable.f,false);
+    public void addItem(String name) {
+        Work work = new Work(name, R.drawable.f, false);
         workList.add(work);
         notifyItemInserted(workList.size() - 1);
     }
