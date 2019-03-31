@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.najafi.ali.personalmanagement.Activities.Work.WorkActivity;
-import com.najafi.ali.personalmanagement.ModelForJobs.Jobs;
 import com.najafi.ali.personalmanagement.R;
 import com.najafi.ali.personalmanagement.fragments.delete.DeleteDialogFragment;
 import com.najafi.ali.personalmanagement.fragments.edit.EditDialogFragmentWork;

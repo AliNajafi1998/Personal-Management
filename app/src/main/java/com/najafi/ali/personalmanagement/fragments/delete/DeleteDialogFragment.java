@@ -18,7 +18,7 @@ public class DeleteDialogFragment extends DialogFragment {
 
     private Button btn_delete;
     private Button btn_dismis;
-    private DeleteDialogFragmentWork.Idelete idelete;
+    private Idelete idelete;
 
 
     @Nullable
@@ -49,7 +49,7 @@ public class DeleteDialogFragment extends DialogFragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
-            this.idelete = (DeleteDialogFragmentWork.Idelete) activity;
+            this.idelete = (Idelete) activity;
         } catch (final ClassCastException e) {
             throw new ClassCastException(activity.toString() + " must implement OnCompleteListener");
         }
